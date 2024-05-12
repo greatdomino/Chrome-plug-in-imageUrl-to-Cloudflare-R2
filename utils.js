@@ -1,7 +1,7 @@
 /**
- * 从URL中提取文件名
+ * Extracting file names from URLs
  * @param {string} url 
- * @returns {string|null} 文件名或null(如果出错)
+ * @returns {string|null} Filename or null (in case of error)
  */
 function getFilenameFromUrl(url) {
   try {
