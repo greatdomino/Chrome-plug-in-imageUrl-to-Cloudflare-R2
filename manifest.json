@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Cloudflare R2 Uploader",
+  "version": "1.0",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "aws-sdk.js",
+      "background.js",
+      "utils.js"
+    ]
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}

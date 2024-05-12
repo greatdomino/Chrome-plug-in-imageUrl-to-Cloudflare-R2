@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CloudFlare R2 Uploader Settings</title>
+    <style>
+        #success-msg {
+            color: green;
+            display: none;
+        }
+    </style>
+    <script src="background.js"></script>
+</head>
+<body>
+<label>
+    Endpoint URL:
+    <input type="text" id="endpoint-url" placeholder="https://..."/>
+</label>
+<br />
+<label>
+    Bucket Name:
+    <input type="text" id="bucket-name" placeholder="Enter your bucket name"/>
+</label>
+<br />
+<label>
+    Access Key ID:
+    <input type="text" id="access-key-id"/>
+</label>
+<br />
+<label>
+    Secret Access Key:
+    <input type="password" id="secret-access-key"/>
+</label>
+<br />
+<button id="save-btn">Save</button>
+<p id="success-msg">Credentials saved successfully!</p>
+<script src="popup.js"></script>
+</body>
+</html>
