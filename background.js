@@ -1,4 +1,4 @@
-AWS.config.region = 'auto'; // 设置为auto,让AWS SDK自动判断区域
+AWS.config.region = 'auto'; // Set it to “auto” to let the AWS SDK determine the region automatically.
 
 chrome.contextMenus.create({
   id: 'upload-image',
@@ -21,13 +21,13 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         region: 'auto'
       });
 
-      const filename = generateRandomFileName(24); //随机生成文件名,后续可以通过通用物品识别进行图片分类
+      const filename = generateRandomFileName(24); //Randomly generated file names, which can subsequently be used to categorize images through generic item recognition
       const blob = await (await fetch(info.srcUrl)).blob();
       const s3Params = {
-        Bucket: bucketName, // 使用输入的存储桶名称
+        Bucket: bucketName,
         Key: filename,
         Body: blob,
-        ContentType: blob.type, // 设置 MIME 类型
+        ContentType: blob.type, // Setting the MIME type
       };
 
       const uploadProgressWindow = window.open('', 'Upload Progress', 'width=400,height=100,top=100,left=100,alwaysRaised=yes,type=notification');
@@ -40,7 +40,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       }).promise();
 
       upload.then(() => {
-        alert(`Image uploaded successfully: ${'https://collect.vehicleinsights.dev'}/${filename}`);
+        alert(`Image uploaded successfully: ${'https://yourdomain.com'}/${filename}`);
         uploadProgressWindow.close();
       }).catch((err) => {
         console.error('Error uploading image:', err);
