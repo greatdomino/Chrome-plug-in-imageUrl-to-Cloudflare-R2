@@ -1,11 +1,11 @@
-// Populate previously saved credentials and storage bucket names
+// Populate previously saved credentials
 function fillSavedCredentials() {
     chrome.storage.sync.get(['endpointUrl', 'accessKeyId', 'secretAccessKey', 'bucketName'], (data) => {
         console.log('Saved credentials:', data);
         document.getElementById('endpoint-url').value = data.endpointUrl || '';
         document.getElementById('access-key-id').value = data.accessKeyId || '';
         document.getElementById('secret-access-key').value = data.secretAccessKey || '';
-        document.getElementById('bucket-name').value = data.bucketName || ''; // 填充存储桶名称
+        document.getElementById('bucket-name').value = data.bucketName || '';
     });
 }
 
@@ -16,7 +16,7 @@ document.getElementById('save-btn').addEventListener('click', () => {
     const endpointUrl = document.getElementById('endpoint-url').value;
     const accessKeyId = document.getElementById('access-key-id').value;
     const secretAccessKey = document.getElementById('secret-access-key').value;
-    const bucketName = document.getElementById('bucket-name').value; // 获取存储桶名称
+    const bucketName = document.getElementById('bucket-name').value;
 
     // Saving credentials and bucket names to browser storage
     chrome.storage.sync.set({
